@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuddleCorner - Soft Toys for Happy Kids</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#FFC1CC',
+                            blue: '#B0E0E6',
+                            yellow: '#FFFACD',
+                            dark: '#4A4A4A',
+                            softwhite: '#F9F9F9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-sans bg-brand-softwhite text-brand-dark antialiased">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-paw text-brand-pink text-3xl mr-2"></i>
+                    <span class="font-display font-bold text-2xl text-gray-800">Cuddle<span class="text-brand-pink">Corner</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Home</a>
+                    <a href="shop.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Shop</a>
+                    <a href="about.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">About</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Contact</a>
+                    <a href="cart.html" class="relative text-gray-600 hover:text-brand-pink transition">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-pink focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                    <a href="cart.html" class="relative text-gray-600 hover:text-brand-pink transition ml-4">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-pink bg-brand-yellow bg-opacity-30">Home</a>
+                <a href="shop.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Shop</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-pink-50 to-blue-50 py-20 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                <h1 class="font-display text-5xl md:text-6xl font-extrabold text-gray-800 leading-tight mb-6">
+                    Friends for <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-purple-400">Every Adventure</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-md mx-auto md:mx-0">
+                    Hand-picked, ultra-soft, and safe toys for your little ones. Find their new best friend today!
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <a href="shop.html" class="px-8 py-3 bg-brand-pink text-white font-bold rounded-full shadow-lg hover:bg-pink-400 hover:shadow-xl hover:-translate-y-1 transition transform flex items-center justify-center">
+                        Shop Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="about.html" class="px-8 py-3 bg-white text-gray-700 font-bold rounded-full shadow-md hover:bg-gray-50 hover:shadow-lg transition flex items-center justify-center border border-gray-100">
+                        Our Story
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <!-- Decorative blobs -->
+                <div class="absolute -top-10 -right-10 w-72 h-72 bg-brand-blue opacity-50 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+                <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-brand-pink opacity-50 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+                
+                <img src="assets/images/hero_toys.png" alt="Happy Soft Toys" class="relative z-10 w-full max-w-lg mx-auto animate-float drop-shadow-2xl rounded-3xl" onerror="this.src='https://placehold.co/600x600?text=Cuddle+Toys+Hero'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 border border-gray-100 rounded-2xl hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-brand-pink bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-pink text-2xl">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2">Premium Quality</h3>
+                    <p class="text-gray-500">Made with the softest fabrics and safety-tested for all ages.</p>
+                </div>
+                <div class="text-center p-6 border border-gray-100 rounded-2xl hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-brand-blue bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-blue text-2xl">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2">Fast Shipping</h3>
+                    <p class="text-gray-500">Free delivery on orders over $50. We ship worldwide!</p>
+                </div>
+                <div class="text-center p-6 border border-gray-100 rounded-2xl hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-yellow-200 bg-opacity-40 rounded-full flex items-center justify-center mx-auto mb-4 text-yellow-600 text-2xl">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2">Made with Love</h3>
+                    <p class="text-gray-500">Every toy is crafted with care and designed to bring smiles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-20 bg-brand-softwhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-800 mb-4">New Arrivals</h2>
+                <div class="w-24 h-1 bg-brand-pink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                    <div class="relative h-64 bg-gray-100 overflow-hidden">
+                        <img src="assets/images/bear.png" alt="Teddy Bear" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x400?text=Teddy+Bear'">
+                        <button class="absolute bottom-4 right-4 bg-white text-brand-pink p-3 rounded-full shadow-md hover:bg-brand-pink hover:text-white transition" onclick="addToCart({id:1, name:'Bernie the Bear', price:24.99, img:'assets/images/bear.png'})">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display font-bold text-lg mb-2">Bernie the Bear</h3>
+                        <div class="flex justify-between items-center">
+                            <p class="text-brand-pink font-bold text-xl">$24.99</p>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                    <div class="relative h-64 bg-gray-100 overflow-hidden">
+                        <img src="assets/images/bunny.png" alt="Fluffy Bunny" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x400?text=Fluffy+Bunny'">
+                        <button class="absolute bottom-4 right-4 bg-white text-brand-pink p-3 rounded-full shadow-md hover:bg-brand-pink hover:text-white transition" onclick="addToCart({id:2, name:'Bella Bunny', price:18.50, img:'assets/images/bunny.png'})">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display font-bold text-lg mb-2">Bella Bunny</h3>
+                        <div class="flex justify-between items-center">
+                            <p class="text-brand-pink font-bold text-xl">$18.50</p>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Product Card 3 -->
+                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                    <div class="relative h-64 bg-gray-100 overflow-hidden">
+                        <img src="assets/images/unicorn.png" alt="Sparkle Unicorn" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x400?text=Unicorn'">
+                        <button class="absolute bottom-4 right-4 bg-white text-brand-pink p-3 rounded-full shadow-md hover:bg-brand-pink hover:text-white transition" onclick="addToCart({id:3, name:'Sparkle Unicorn', price:29.99, img:'assets/images/unicorn.png'})">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display font-bold text-lg mb-2">Sparkle Unicorn</h3>
+                        <div class="flex justify-between items-center">
+                            <p class="text-brand-pink font-bold text-xl">$29.99</p>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Product Card 4 -->
+                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                    <div class="relative h-64 bg-gray-100 overflow-hidden">
+                        <img src="assets/images/dino.png" alt="Dino Plush" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x400?text=Dino+Plush'">
+                        <button class="absolute bottom-4 right-4 bg-white text-brand-pink p-3 rounded-full shadow-md hover:bg-brand-pink hover:text-white transition" onclick="addToCart({id:4, name:'Dexter Dino', price:22.00, img:'assets/images/dino.png'})">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display font-bold text-lg mb-2">Dexter Dino</h3>
+                        <div class="flex justify-between items-center">
+                            <p class="text-brand-pink font-bold text-xl">$22.00</p>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="shop.html" class="inline-block px-8 py-3 bg-white text-brand-pink font-bold rounded-full border-2 border-brand-pink hover:bg-brand-pink hover:text-white transition">
+                    View All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 bg-brand-blue bg-opacity-20 relative overflow-hidden">
+        <!-- Decor -->
+        <div class="absolute top-0 right-0 -m-10 w-40 h-40 bg-white rounded-full opacity-50 mix-blend-overlay"></div>
+        <div class="absolute bottom-0 left-0 -m-10 w-40 h-40 bg-white rounded-full opacity-50 mix-blend-overlay"></div>
+
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="font-display text-4xl font-bold text-gray-800 mb-4">Join the Cuddle Club!</h2>
+            <p class="text-gray-600 mb-8">Subscribe to our newsletter for exclusive offers, new arrivals, and adorable updates.</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Enter your email address" class="flex-1 px-6 py-4 rounded-full border-0 focus:ring-2 focus:ring-brand-pink shadow-md">
+                <button type="button" class="px-8 py-4 bg-brand-pink text-white font-bold rounded-full shadow-md hover:bg-pink-400 transition">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-paw text-brand-pink text-2xl mr-2"></i>
+                        <span class="font-display font-bold text-2xl">Cuddle<span class="text-brand-pink">Corner</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Bringing joy and soft hugs to children everywhere. Our toys are safe, durable, and packed with love.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="index.html" class="hover:text-brand-pink transition">Home</a></li>
+                        <li><a href="shop.html" class="hover:text-brand-pink transition">Shop</a></li>
+                        <li><a href="about.html" class="hover:text-brand-pink transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-pink transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Support</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-brand-pink transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-brand-pink transition">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-pink transition">Returns</a></li>
+                        <li><a href="#" class="hover:text-brand-pink transition">Track Order</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><i class="fa-solid fa-location-dot mr-2"></i> 123 Toy Street, Joy City</li>
+                        <li><i class="fa-solid fa-envelope mr-2"></i> hello@cuddlecorner.com</li>
+                        <li><i class="fa-solid fa-phone mr-2"></i> +1 (555) 123-4567</li>
+                    </ul>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-brand-pink transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-brand-pink transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-brand-pink transition"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 CuddleCorner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

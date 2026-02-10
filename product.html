@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bernie the Bear - CuddleCorner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#FFC1CC',
+                            blue: '#B0E0E6',
+                            yellow: '#FFFACD',
+                            dark: '#4A4A4A',
+                            softwhite: '#F9F9F9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="font-sans bg-brand-softwhite text-brand-dark antialiased">
+    <!-- Navbar (Same as Index) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-paw text-brand-pink text-3xl mr-2"></i>
+                    <span class="font-display font-bold text-2xl text-gray-800">Cuddle<span
+                            class="text-brand-pink">Corner</span></span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Home</a>
+                    <a href="shop.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Shop</a>
+                    <a href="about.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">About</a>
+                    <a href="contact.html"
+                        class="text-gray-600 hover:text-brand-pink font-semibold transition">Contact</a>
+                    <a href="cart.html" class="relative text-gray-600 hover:text-brand-pink transition">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span
+                            class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+                <! -- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-pink focus:outline-none">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                        <a href="cart.html" class="relative text-gray-600 hover:text-brand-pink transition ml-4">
+                            <i class="fa-solid fa-cart-shopping text-xl"></i>
+                            <span
+                                class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        </a>
+                    </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Home</a>
+                <a href="shop.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Shop</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">About</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-12">
+                <!-- Image Gallery -->
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 rounded-2xl overflow-hidden mb-4 shadow-sm h-96 relative">
+                        <img id="main-product-img" src="assets/images/bear.png" alt="Bernie the Bear"
+                            class="w-full h-full object-cover"
+                            onerror="this.src='https://placehold.co/600x600?text=Bernie+the+Bear'">
+                        <div
+                            class="absolute top-4 left-4 bg-brand-yellow text-gray-800 px-3 py-1 rounded-full text-sm font-bold">
+                            Best Seller</div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-4">
+                        <div
+                            class="bg-gray-100 rounded-lg overflow-hidden cursor-pointer border-2 border-brand-pink h-24">
+                            <img src="assets/images/bear.png" class="w-full h-full object-cover"
+                                onerror="this.src='https://placehold.co/150x150?text=Side'">
+                        </div>
+                        <div
+                            class="bg-gray-100 rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-brand-pink h-24">
+                            <img src="assets/images/bear.png" class="w-full h-full object-cover"
+                                onerror="this.src='https://placehold.co/150x150?text=Back'">
+                        </div>
+                        <div
+                            class="bg-gray-100 rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-brand-pink h-24">
+                            <img src="assets/images/bear.png" class="w-full h-full object-cover"
+                                onerror="this.src='https://placehold.co/150x150?text=Close'">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="md:w-1/2">
+                    <nav class="text-sm text-gray-500 mb-4">
+                        <a href="index.html" class="hover:text-brand-pink">Home</a> / <a href="shop.html"
+                            class="hover:text-brand-pink">Shop</a> / Bernie the Bear
+                    </nav>
+                    <h1 class="font-display text-4xl font-bold text-gray-800 mb-2">Bernie the Bear</h1>
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 text-sm mr-2">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">(24 reviews)</span>
+                    </div>
+                    <p class="text-2xl font-bold text-brand-pink mb-6">$24.99</p>
+
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Meet Bernie, the softest bear in the world! Perfect for cuddles, tea parties, and bedtime
+                        stories. Made from 100% hypoallergenic organic cotton and stuffed with love. Suitable for all
+                        ages.
+                    </p>
+
+                    <div class="mb-8">
+                        <h4 class="font-bold mb-2">Dimensions</h4>
+                        <p class="text-sm text-gray-600">Height: 12 inches | Width: 8 inches</p>
+                    </div>
+
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="flex items-center border border-gray-300 rounded-full">
+                            <button class="px-4 py-2 text-gray-600 hover:text-brand-pink"
+                                onclick="decreaseQty()">-</button>
+                            <span id="qty-display" class="px-4 py-2 font-bold text-gray-800">1</span>
+                            <button class="px-4 py-2 text-gray-600 hover:text-brand-pink"
+                                onclick="increaseQty()">+</button>
+                        </div>
+                        <button
+                            onclick="addToCart({id:1, name:'Bernie the Bear', price:24.99, img:'assets/images/bear.png'})"
+                            class="flex-1 py-3 bg-brand-pink text-white rounded-full font-bold shadow-lg hover:bg-pink-400 hover:shadow-xl hover:-translate-y-1 transition transform flex items-center justify-center">
+                            <i class="fa-solid fa-cart-plus mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i class="fa-solid fa-shield-cat mr-2 text-brand-blue"></i> Safe for all ages (0+)
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fa-solid fa-box mr-2 text-brand-blue"></i> Free shipping on orders over $50
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-16 bg-brand-softwhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-display text-3xl font-bold text-gray-800 mb-8 text-center">You Might Also Like</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Related 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                    <div class="relative h-60 bg-gray-100 overflow-hidden">
+                        <img src="assets/images/bunny.png" alt="Bella Bunny"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            onerror="this.src='https://placehold.co/400x400?text=Bunny'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-display font-bold text-lg mb-1">Bella Bunny</h3>
+                        <p class="text-brand-pink font-bold">$18.50</p>
+                    </div>
+                </div>
+                <!-- Related 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                    <div class="relative h-60 bg-gray-100 overflow-hidden">
+                        <img src="assets/images/unicorn.png" alt="Sparkle Unicorn"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            onerror="this.src='https://placehold.co/400x400?text=Unicorn'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-display font-bold text-lg mb-1">Sparkle Unicorn</h3>
+                        <p class="text-brand-pink font-bold">$29.99</p>
+                    </div>
+                </div>
+                <!-- Related 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                    <div class="relative h-60 bg-gray-100 overflow-hidden">
+                        <img src="assets/images/dino.png" alt="Dexter Dino"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            onerror="this.src='https://placehold.co/400x400?text=Dino'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-display font-bold text-lg mb-1">Dexter Dino</h3>
+                        <p class="text-brand-pink font-bold">$22.00</p>
+                    </div>
+                </div>
+                <!-- Related 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                    <div class="relative h-60 bg-gray-100 overflow-hidden">
+                        <img src="assets/images/cat.png" alt="Cuddly Cat"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            onerror="this.src='https://placehold.co/400x400?text=Cat'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-display font-bold text-lg mb-1">Cuddly Cat</h3>
+                        <p class="text-brand-pink font-bold">$19.99</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fa-solid fa-paw text-brand-pink text-2xl mr-2"></i>
+                    <span class="font-display font-bold text-2xl">Cuddle<span
+                            class="text-brand-pink">Corner</span></span>
+                </div>
+                <p class="text-gray-500 text-sm">&copy; 2026 CuddleCorner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        let qty = 1;
+        const qtyDisplay = document.getElementById('qty-display');
+        function increaseQty() {
+            qty++;
+            qtyDisplay.innerText = qty;
+        }
+        function decreaseQty() {
+            if (qty > 1) {
+                qty--;
+                qtyDisplay.innerText = qty;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CuddleCorner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#FFC1CC',
+                            blue: '#B0E0E6',
+                            yellow: '#FFFACD',
+                            dark: '#4A4A4A',
+                            softwhite: '#F9F9F9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="font-sans bg-brand-softwhite text-brand-dark antialiased">
+    <!-- Navbar (Same as Index) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-paw text-brand-pink text-3xl mr-2"></i>
+                    <span class="font-display font-bold text-2xl text-gray-800">Cuddle<span
+                            class="text-brand-pink">Corner</span></span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Home</a>
+                    <a href="shop.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Shop</a>
+                    <a href="about.html" class="text-brand-pink font-bold transition">About</a>
+                    <a href="contact.html"
+                        class="text-gray-600 hover:text-brand-pink font-semibold transition">Contact</a>
+                    <a href="cart.html" class="relative text-gray-600 hover:text-brand-pink transition">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span
+                            class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+                <! -- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-pink focus:outline-none">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                        <a href="cart.html" class="relative text-gray-600 hover:text-brand-pink transition ml-4">
+                            <i class="fa-solid fa-cart-shopping text-xl"></i>
+                            <span
+                                class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        </a>
+                    </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Home</a>
+                <a href="shop.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Shop</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-brand-pink bg-brand-yellow bg-opacity-30">About</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <div class="bg-brand-blue bg-opacity-10 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-display text-4xl font-bold text-gray-800 mb-4">Our Story</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">From a small sewing room to a world of cuddles, learn how
+                CuddleCorner began.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="assets/images/story.png" alt="Our Workshop" class="rounded-2xl shadow-lg w-full"
+                        onerror="this.src='https://placehold.co/600x400?text=Our+Workshop'">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="font-display text-3xl font-bold text-gray-800 mb-6">Crafting Joy Since 2015</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        It all started when our founder, Sarah, couldn't find a soft toy that was both safe for her
+                        newborn and cute enough to be a keepsake. So, she made one herself. That first teddy bear,
+                        "Bernie," sparked a passion for creating high-quality, safe, and adorable companions for
+                        children everywhere.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Today, CuddleCorner is a team of dedicated designers and makers who believe that every child
+                        deserves a soft friend to hold onto. We source only the finest, hypoallergenic materials and
+                        subject every toy to rigorous safety testing.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="text-center">
+                            <h4 class="font-bold text-2xl text-brand-pink">10k+</h4>
+                            <p class="text-gray-500 text-sm">Happy Kids</p>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="font-bold text-2xl text-brand-pink">50+</h4>
+                            <p class="text-gray-500 text-sm">Unique Designs</p>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="font-bold text-2xl text-brand-pink">100%</h4>
+                            <p class="text-gray-500 text-sm">Handmade Love</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="py-16 bg-brand-softwhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-800">Meet the Team</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+                        <img src="https://placehold.co/100x100?text=Sarah" alt="Sarah"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Sarah Jenkins</h3>
+                    <p class="text-gray-500 text-sm">Founder & Chief Cuddler</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+                        <img src="https://placehold.co/100x100?text=Mike" alt="Mike" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Mike Ross</h3>
+                    <p class="text-gray-500 text-sm">Head of Design</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+                        <img src="https://placehold.co/100x100?text=Emily" alt="Emily"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Emily Chen</h3>
+                    <p class="text-gray-500 text-sm">Safety Inspector</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-500 text-sm">
+                <p>&copy; 2026 CuddleCorner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

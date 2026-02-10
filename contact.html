@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CuddleCorner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#FFC1CC',
+                            blue: '#B0E0E6',
+                            yellow: '#FFFACD',
+                            dark: '#4A4A4A',
+                            softwhite: '#F9F9F9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="font-sans bg-brand-softwhite text-brand-dark antialiased">
+    <!-- Navbar (Same as Index) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-paw text-brand-pink text-3xl mr-2"></i>
+                    <span class="font-display font-bold text-2xl text-gray-800">Cuddle<span
+                            class="text-brand-pink">Corner</span></span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Home</a>
+                    <a href="shop.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Shop</a>
+                    <a href="about.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">About</a>
+                    <a href="contact.html" class="text-brand-pink font-bold transition">Contact</a>
+                    <a href="cart.html" class="relative text-gray-600 hover:text-brand-pink transition">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span
+                            class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+                <! -- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-pink focus:outline-none">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                        <a href="cart.html" class="relative text-gray-600 hover:text-brand-pink transition ml-4">
+                            <i class="fa-solid fa-cart-shopping text-xl"></i>
+                            <span
+                                class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        </a>
+                    </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Home</a>
+                <a href="shop.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Shop</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">About</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-brand-pink bg-brand-yellow bg-opacity-30">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <div class="bg-brand-blue bg-opacity-10 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-display text-4xl font-bold text-gray-800 mb-4">Get in Touch</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Have a question? We'd love to hear from you!</p>
+        </div>
+    </div>
+
+    <!-- Contact Content -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div
+                            class="w-12 h-12 bg-brand-pink bg-opacity-10 rounded-full flex items-center justify-center text-brand-pink text-xl mr-4">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1">Visit Us</h3>
+                            <p class="text-gray-500">123 Toy Street, Joy City</p>
+                            <p class="text-gray-500">Cuddleland, 90210</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div
+                            class="w-12 h-12 bg-brand-pink bg-opacity-10 rounded-full flex items-center justify-center text-brand-pink text-xl mr-4">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1">Email Us</h3>
+                            <p class="text-gray-500">hello@cuddlecorner.com</p>
+                            <p class="text-gray-500">support@cuddlecorner.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div
+                            class="w-12 h-12 bg-brand-pink bg-opacity-10 rounded-full flex items-center justify-center text-brand-pink text-xl mr-4">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1">Call Us</h3>
+                            <p class="text-gray-500">+1 (555) 123-4567</p>
+                            <p class="text-gray-500">Mon-Fri: 9am - 5pm</p>
+                        </div>
+                    </div>
+
+                    <!-- Map Placeholder -->
+                    <div class="w-full h-64 bg-gray-100 rounded-2xl overflow-hidden shadow-sm mt-8">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1669912000000!5m2!1sen!2sus"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-brand-softwhite p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-2xl mb-6">Send a Message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-brand-pink focus:ring-brand-pink"
+                                placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-brand-pink focus:ring-brand-pink"
+                                placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Subject</label>
+                            <select
+                                class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-brand-pink focus:ring-brand-pink">
+                                <option>Order Inquiry</option>
+                                <option>Product Question</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                            <textarea
+                                class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-brand-pink focus:ring-brand-pink h-32"
+                                placeholder="How can we help?"></textarea>
+                        </div>
+                        <button type="button"
+                            class="w-full py-3 bg-brand-pink text-white rounded-full font-bold shadow-md hover:bg-pink-400 transition"
+                            onclick="alert('Message Sent!')">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-500 text-sm">
+                <p>&copy; 2026 CuddleCorner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

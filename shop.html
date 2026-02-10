@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - CuddleCorner</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#FFC1CC',
+                            blue: '#B0E0E6',
+                            yellow: '#FFFACD',
+                            dark: '#4A4A4A',
+                            softwhite: '#F9F9F9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="font-sans bg-brand-softwhite text-brand-dark antialiased">
+
+    <!-- Navigation (Same as Index) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-paw text-brand-pink text-3xl mr-2"></i>
+                    <span class="font-display font-bold text-2xl text-gray-800">Cuddle<span
+                            class="text-brand-pink">Corner</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Home</a>
+                    <a href="shop.html" class="text-brand-pink font-bold transition">Shop</a>
+                    <a href="about.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">About</a>
+                    <a href="contact.html"
+                        class="text-gray-600 hover:text-brand-pink font-semibold transition">Contact</a>
+                    <a href="cart.html" class="relative text-gray-600 hover:text-brand-pink transition">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span
+                            class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-pink focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                    <a href="cart.html" class="relative text-gray-600 hover:text-brand-pink transition ml-4">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span
+                            class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Home</a>
+                <a href="shop.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-brand-pink bg-brand-yellow bg-opacity-30">Shop</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">About</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-brand-blue bg-opacity-10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-display text-4xl font-bold text-gray-800">Shop Our Collection</h1>
+            <p class="text-gray-600 mt-2">Find the perfect cuddle buddy!</p>
+        </div>
+    </div>
+
+    <!-- Shop Content -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-8">
+
+                <!-- Sidebar Filters -->
+                <div class="w-full md:w-1/4">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 sticky top-24">
+                        <h3 class="font-bold text-xl mb-4">Filters</h3>
+
+                        <div class="mb-6">
+                            <h4 class="font-semibold mb-2">Categories</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="checkbox" class="rounded text-brand-pink focus:ring-brand-pink">
+                                    <span>Teddy Bears</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="checkbox" class="rounded text-brand-pink focus:ring-brand-pink">
+                                    <span>Bunnies</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="checkbox" class="rounded text-brand-pink focus:ring-brand-pink">
+                                    <span>Unicorns & Fantasy</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="checkbox" class="rounded text-brand-pink focus:ring-brand-pink">
+                                    <span>Sea Animals</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="font-semibold mb-2">Price Range</h4>
+                            <input type="range" min="10" max="100" class="w-full accent-brand-pink">
+                            <div class="flex justify-between text-sm text-gray-500 mt-1">
+                                <span>$10</span>
+                                <span>$100</span>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full py-2 bg-brand-pink text-white rounded-full font-bold hover:bg-pink-400 transition">Apply
+                            Filters</button>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="w-full md:w-3/4">
+                    <!-- Sorting -->
+                    <div class="flex justify-between items-center mb-6">
+                        <p class="text-gray-500">Showing 6 products</p>
+                        <select
+                            class="border-gray-300 rounded-lg text-sm focus:ring-brand-pink focus:border-brand-pink p-2 border">
+                            <option>Sort by: Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest Arrivals</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        <!-- Product 1 -->
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                            <div class="relative h-60 bg-gray-100 overflow-hidden">
+                                <img src="assets/images/bear.png" alt="Bernie the Bear"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                    onerror="this.src='https://placehold.co/400x400?text=Teddy+Bear'">
+                                <button
+                                    class="absolute bottom-4 right-4 bg-white text-brand-pink p-3 rounded-full shadow-md hover:bg-brand-pink hover:text-white transition"
+                                    onclick="addToCart({id:1, name:'Bernie the Bear', price:24.99, img:'assets/images/bear.png'})">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-display font-bold text-lg mb-1"><a href="product.html">Bernie the
+                                        Bear</a></h3>
+                                <p class="text-brand-pink font-bold text-lg">$24.99</p>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                            <div class="relative h-60 bg-gray-100 overflow-hidden">
+                                <img src="assets/images/bunny.png" alt="Bella Bunny"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                    onerror="this.src='https://placehold.co/400x400?text=Fluffy+Bunny'">
+                                <button
+                                    class="absolute bottom-4 right-4 bg-white text-brand-pink p-3 rounded-full shadow-md hover:bg-brand-pink hover:text-white transition"
+                                    onclick="addToCart({id:2, name:'Bella Bunny', price:18.50, img:'assets/images/bunny.png'})">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-display font-bold text-lg mb-1"><a href="product.html">Bella Bunny</a>
+                                </h3>
+                                <p class="text-brand-pink font-bold text-lg">$18.50</p>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                            <div class="relative h-60 bg-gray-100 overflow-hidden">
+                                <img src="assets/images/unicorn.png" alt="Sparkle Unicorn"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                    onerror="this.src='https://placehold.co/400x400?text=Unicorn'">
+                                <button
+                                    class="absolute bottom-4 right-4 bg-white text-brand-pink p-3 rounded-full shadow-md hover:bg-brand-pink hover:text-white transition"
+                                    onclick="addToCart({id:3, name:'Sparkle Unicorn', price:29.99, img:'assets/images/unicorn.png'})">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-display font-bold text-lg mb-1"><a href="product.html">Sparkle
+                                        Unicorn</a></h3>
+                                <p class="text-brand-pink font-bold text-lg">$29.99</p>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                            <div class="relative h-60 bg-gray-100 overflow-hidden">
+                                <img src="assets/images/dino.png" alt="Dexter Dino"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                    onerror="this.src='https://placehold.co/400x400?text=Dino'">
+                                <button
+                                    class="absolute bottom-4 right-4 bg-white text-brand-pink p-3 rounded-full shadow-md hover:bg-brand-pink hover:text-white transition"
+                                    onclick="addToCart({id:4, name:'Dexter Dino', price:22.00, img:'assets/images/dino.png'})">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-display font-bold text-lg mb-1"><a href="product.html">Dexter Dino</a>
+                                </h3>
+                                <p class="text-brand-pink font-bold text-lg">$22.00</p>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                            <div class="relative h-60 bg-gray-100 overflow-hidden">
+                                <img src="assets/images/cat.png" alt="Cuddly Cat"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                    onerror="this.src='https://placehold.co/400x400?text=Cuddly+Cat'">
+                                <button
+                                    class="absolute bottom-4 right-4 bg-white text-brand-pink p-3 rounded-full shadow-md hover:bg-brand-pink hover:text-white transition"
+                                    onclick="addToCart({id:5, name:'Cuddly Cat', price:19.99, img:'assets/images/cat.png'})">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-display font-bold text-lg mb-1"><a href="product.html">Cuddly Cat</a>
+                                </h3>
+                                <p class="text-brand-pink font-bold text-lg">$19.99</p>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                            <div class="relative h-60 bg-gray-100 overflow-hidden">
+                                <img src="assets/images/octopus.png" alt="Olly Octopus"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                    onerror="this.src='https://placehold.co/400x400?text=Octopus'">
+                                <button
+                                    class="absolute bottom-4 right-4 bg-white text-brand-pink p-3 rounded-full shadow-md hover:bg-brand-pink hover:text-white transition"
+                                    onclick="addToCart({id:6, name:'Olly Octopus', price:25.50, img:'assets/images/octopus.png'})">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-display font-bold text-lg mb-1"><a href="product.html">Olly Octopus</a>
+                                </h3>
+                                <p class="text-brand-pink font-bold text-lg">$25.50</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-12 flex justify-center">
+                        <nav class="flex space-x-2">
+                            <a href="#" class="px-4 py-2 bg-brand-pink text-white rounded-lg font-bold">1</a>
+                            <a href="#" class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">2</a>
+                            <a href="#" class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">3</a>
+                            <span class="px-4 py-2 text-gray-400">...</span>
+                            <a href="#" class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">Next</a>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-paw text-brand-pink text-2xl mr-2"></i>
+                        <span class="font-display font-bold text-2xl">Cuddle<span
+                                class="text-brand-pink">Corner</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Bringing joy and soft hugs to children everywhere.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="index.html" class="hover:text-brand-pink transition">Home</a></li>
+                        <li><a href="shop.html" class="hover:text-brand-pink transition">Shop</a></li>
+                        <li><a href="about.html" class="hover:text-brand-pink transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-pink transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Support</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-brand-pink transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-brand-pink transition">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><i class="fa-solid fa-envelope mr-2"></i> hello@cuddlecorner.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 CuddleCorner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - CuddleCorner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#FFC1CC',
+                            blue: '#B0E0E6',
+                            yellow: '#FFFACD',
+                            dark: '#4A4A4A',
+                            softwhite: '#F9F9F9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="font-sans bg-brand-softwhite text-brand-dark antialiased">
+    <!-- Navbar (Same as Index) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-paw text-brand-pink text-3xl mr-2"></i>
+                    <span class="font-display font-bold text-2xl text-gray-800">Cuddle<span
+                            class="text-brand-pink">Corner</span></span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Home</a>
+                    <a href="shop.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">Shop</a>
+                    <a href="about.html" class="text-gray-600 hover:text-brand-pink font-semibold transition">About</a>
+                    <a href="contact.html"
+                        class="text-gray-600 hover:text-brand-pink font-semibold transition">Contact</a>
+                    <a href="cart.html" class="relative text-brand-pink transition">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span
+                            class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+                <! -- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-pink focus:outline-none">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                        <a href="cart.html" class="relative text-brand-pink transition ml-4">
+                            <i class="fa-solid fa-cart-shopping text-xl"></i>
+                            <span
+                                class="cart-count absolute -top-2 -right-2 bg-brand-pink text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        </a>
+                    </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Home</a>
+                <a href="shop.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Shop</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">About</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-brand-pink hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-brand-blue bg-opacity-10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-display text-4xl font-bold text-gray-800">Your Shopping Cart</h1>
+            <p class="text-gray-600 mt-2">Almost ready to cuddle!</p>
+        </div>
+    </div>
+
+    <!-- Cart Content -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-8">
+
+                <!-- Cart Items -->
+                <div class="w-full lg:w-2/3" id="cart-items-container">
+                    <!-- Items will be injected here by JS -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center py-20 hidden"
+                        id="empty-cart-msg">
+                        <div class="inline-block p-4 bg-gray-100 rounded-full text-gray-400 text-3xl mb-4">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Your cart is empty</h3>
+                        <p class="text-gray-500 mb-6">Looks like you haven't found a friend yet.</p>
+                        <a href="shop.html"
+                            class="px-6 py-2 bg-brand-pink text-white rounded-full font-bold hover:bg-pink-400 transition">Start
+                            Shopping</a>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="w-full lg:w-1/3">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 sticky top-24">
+                        <h3 class="font-bold text-xl mb-6">Order Summary</h3>
+
+                        <div class="flex justify-between mb-3 text-gray-600">
+                            <span>Subtotal</span>
+                            <span id="subtotal-display">$0.00</span>
+                        </div>
+                        <div class="flex justify-between mb-3 text-gray-600">
+                            <span>Shipping</span>
+                            <span class="text-green-500">Free</span>
+                        </div>
+                        <div class="flex justify-between mb-3 text-gray-600">
+                            <span>Tax (Estimated)</span>
+                            <span id="tax-display">$0.00</span>
+                        </div>
+
+                        <div
+                            class="border-t border-gray-100 my-4 pt-4 flex justify-between font-bold text-xl text-gray-800">
+                            <span>Total</span>
+                            <span id="total-display">$0.00</span>
+                        </div>
+
+                        <button
+                            class="w-full py-3 bg-brand-pink text-white rounded-full font-bold hover:bg-pink-400 transition shadow-md mb-4"
+                            onclick="alert('Checkout functionality coming soon!')">
+                            Proceed to Checkout
+                        </button>
+
+                        <div class="flex items-center justify-center text-gray-400 text-sm">
+                            <i class="fa-solid fa-lock mr-2"></i> Secure Checkout
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8 border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-500 text-sm">
+                <p>&copy; 2026 CuddleCorner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Cart Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCart();
+        });
+
+        function renderCart() {
+            const cartItems = JSON.parse(localStorage.getItem('cuddle_cart')) || [];
+            const container = document.getElementById('cart-items-container');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+
+            if (cartItems.length === 0) {
+                container.innerHTML = '';
+                container.appendChild(emptyMsg);
+                emptyMsg.classList.remove('hidden');
+                updateSummary(0);
+                return;
+            }
+
+            let html = '';
+            let subtotal = 0;
+
+            // Group items or just list them (simple listing for now)
+            // Ideally we group by ID but for simplicity let's just list
+            cartItems.forEach((item, index) => {
+                subtotal += item.price;
+                html += `
+                    <div class="flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-4">
+                        <img src="${item.img}" alt="${item.name}" class="w-20 h-20 object-cover rounded-lg mr-4 bg-gray-100" onerror="this.src='https://placehold.co/100x100?text=Toy'">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-lg">${item.name}</h4>
+                            <p class="text-gray-500 text-sm">Color: Default</p>
+                        </div>
+                        <div class="font-bold text-brand-pink text-lg mr-6">$${item.price.toFixed(2)}</div>
+                        <button onclick="removeItem(${index})" class="text-gray-400 hover:text-red-500 transition">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            updateSummary(subtotal);
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('cuddle_cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cuddle_cart', JSON.stringify(cart));
+            renderCart();
+            updateCartCount(); // from script.js
+        }
+
+        function updateSummary(subtotal) {
+            const tax = subtotal * 0.08;
+            const total = subtotal + tax;
+
+            if (document.getElementById('subtotal-display')) {
+                document.getElementById('subtotal-display').innerText = '$' + subtotal.toFixed(2);
+                document.getElementById('tax-display').innerText = '$' + tax.toFixed(2);
+                document.getElementById('total-display').innerText = '$' + total.toFixed(2);
+            }
+        }
+    </script>
+</body>
+
+</html>
